@@ -1,0 +1,26 @@
+
+@{
+    ViewBag.Title = "Find";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<style>
+    body {
+    }
+
+    h2 {
+        background-color: rgb(222, 230, 222);
+        padding: 20px;
+    }
+</style>
+<center>
+    <h2>Tìm Kiếm</h2>
+
+    <form method="post">
+
+        SoHoaDon:<input type="text" name="SoHoaDon"> 
+        <button class="btn btn-primary" href="@Url.Action("Index","HoaDon")">Tìm Kiếm</button>
+    </form>
+</center>
+
+
