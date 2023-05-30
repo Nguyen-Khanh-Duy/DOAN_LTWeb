@@ -1,0 +1,79 @@
+@model QUANLYNHASACH.Models.tbDAILY
+
+@{
+    ViewBag.Title = "XÓA ĐẠI LÝ";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<style>
+    h2 {
+        background-color: rgb(222, 230, 222);
+        padding: 20px;
+    }
+</style>
+
+<center>
+    <h2>XÓA ĐẠI LÝ</h2>
+
+
+    <div>
+
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.MaDaiLy)
+            </dt>
+
+            <dd>
+                <button>@Html.DisplayFor(model => model.MaDaiLy)</button>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TenDaiLy)
+            </dt>
+
+            <dd>
+                <button>@Html.DisplayFor(model => model.TenDaiLy)</button>
+            </dd>
+
+            <dt>
+                 @Html.DisplayNameFor(model => model.TenChuDaiLy)
+            </dt>
+
+            <dd>
+                <button> @Html.DisplayFor(model => model.TenChuDaiLy)</button>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DiaChi)
+            </dt>
+
+            <dd>
+                <button> @Html.DisplayFor(model => model.DiaChi)</button>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SoDienThoai)
+            </dt>
+
+            <dd>
+                <button>@Html.DisplayFor(model => model.SoDienThoai)</button>
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <button class="btn btn-primary" href="@Url.Action("Index","DaiLy")">Delete</button>
+        <button type="button" onclick="location.href='@Url.Action("Index", "DaiLy")'">
+            Back to List
+        </button>
+    </div>
+        }
+        <br />
+        <h3>Bạn có chắc chắn muốn xóa không?</h3>
+
+    </div>
+</center>
