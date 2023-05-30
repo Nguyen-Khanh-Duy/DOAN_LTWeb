@@ -1,0 +1,60 @@
+@model QUANLYNHASACH.Models.tbNHAXUATBAN
+
+@{
+    ViewBag.Title = "CHI TIẾT THÔNG TIN";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<style>
+    h2 {
+        background-color: rgb(222, 230, 222);
+        padding: 20px;
+    }
+</style>
+<center>
+    <h2>CHI TIẾT THÔNG TIN</h2>
+<div>
+       <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.MaNhaXuatBan)
+            </dt>
+
+            <dd>
+                <button>@Html.DisplayFor(model => model.MaNhaXuatBan)</button>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TenNhaXuatBan)
+            </dt>
+
+            <dd>
+                <button> @Html.DisplayFor(model => model.TenNhaXuatBan) </button>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DiaChi)
+            </dt>
+
+            <dd>
+                <button>@Html.DisplayFor(model => model.DiaChi)</button>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SoDienThoai)
+            </dt>
+
+            <dd>
+                <button>@Html.DisplayFor(model => model.SoDienThoai)</button>
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        <button type="button" onclick="location.href='@Url.Action("Edit", "NhaXuatBan")'">
+            Details
+        </button>
+        <button type="button" onclick="location.href='@Url.Action("Index", "NhaXuatBan")'">
+            Back to List
+        </button>
+    </p>
+</center>
