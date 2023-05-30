@@ -1,0 +1,60 @@
+@{
+    ViewBag.Title = "XÓA HÓA ĐƠN";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<style>
+    h2 {
+        background-color: rgb(222, 230, 222);
+        padding: 20px;
+    }
+</style>
+<center>
+    <h2>XÓA HÓA ĐƠN</h2>
+    @model QUANLYNHASACH.Models.tbHOADON
+
+
+    <div>
+
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.SoHoaDon)
+            </dt>
+
+            <dd>
+                <button> @Html.DisplayFor(model => model.SoHoaDon)</button>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NgayLapHoaDon)
+            </dt>
+
+            <dd>
+                <button>@Html.DisplayFor(model => model.NgayLapHoaDon)</button>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MaDaiLy)
+            </dt>
+
+            <dd>
+                <button>@Html.DisplayFor(model => model.MaDaiLy)</button>
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <button class="btn btn-primary" href="@Url.Action("Index","HoaDon")">Delete</button>
+                <button type="button" onclick="location.href='@Url.Action("Index", "HoaDon")'">
+                    Back to List
+                </button>
+            </div>
+        }
+        <br />
+        <h3>Bạn có chắc chắn muốn xóa không?</h3>
+    </div>
+</center>
