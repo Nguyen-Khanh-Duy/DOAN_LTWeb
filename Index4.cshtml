@@ -1,0 +1,95 @@
+@model PagedList.IPagedList<QUANLYNHASACH.Models.tbSACH>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Nhà Sách";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+</head>
+<body>
+    <style>
+        h2 {
+            background-color: rgb(222, 230, 222);
+            padding: 20px;
+        }
+    </style>
+    <center><h2>BẢNG SÁCH</h2></center>
+    <center>
+        <br /><br />
+        <table class="table" border="1">
+            <tr>
+                <th>
+                    MaSach
+                </th>
+                <th>
+                    TenSach
+                </th>
+                <th>
+                    TenTacGia
+                </th>
+                <th>
+                    GiaBia
+                </th>
+                <th>
+                    GiaBanChoDaiLy
+                </th>
+                <th>
+                    MaNhaXuatBan
+                </th>
+                <th>
+                    SoTrang
+                </th>
+                <th>
+                    @Html.ActionLink("Thêm Mới", "Create")|
+                    @Html.ActionLink("Tìm Kiếm", "Find")
+                </th>
+                <th>
+
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MaSach)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TenSach)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TenTacGia)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GiaBia)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GiaBanChoDaiLy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MaNhaXuatBan)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SoTrang)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Sửa", "Edit", new { id = item.MaSach }) |
+                        @Html.ActionLink("Chi Tiết", "Details", new { id = item.MaSach }) |
+                        @Html.ActionLink("Xóa", "Delete", new { id = item.MaSach })
+                    </td>
+                </tr>
+            }
+        </table>
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+    </center>
+</body>
+</html>
+
+
