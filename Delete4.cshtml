@@ -1,0 +1,96 @@
+@model QUANLYNHASACH.Models.tbSACH
+
+@{
+    ViewBag.Title = "XÓA SÁCH";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<style>
+    h2 {
+        background-color: rgb(222, 230, 222);
+        padding: 20px;
+    }
+</style>
+<center>
+    <h2>XÓA SÁCH</h2>
+
+
+    <div>
+
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.MaSach)
+            </dt>
+
+            <dd>
+                <button> @Html.DisplayFor(model => model.MaSach)</button>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TenSach)
+            </dt>
+
+            <dd>
+                <button>@Html.DisplayFor(model => model.TenSach)</button>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TenTacGia)
+            </dt>
+
+            <dd>
+                <button> @Html.DisplayFor(model => model.TenTacGia)</button>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.GiaBia)
+            </dt>
+
+            <dd>
+                <button>  @Html.DisplayFor(model => model.GiaBia)</button>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.GiaBanChoDaiLy)
+            </dt>
+
+            <dd>
+                <button> @Html.DisplayFor(model => model.GiaBanChoDaiLy)</button>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MaNhaXuatBan)
+            </dt>
+
+            <dd>
+                <button> @Html.DisplayFor(model => model.MaNhaXuatBan)</button>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SoTrang)
+            </dt>
+
+            <dd>
+                <button> @Html.DisplayFor(model => model.SoTrang)</button>
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <button class="btn btn-primary" href="@Url.Action("Index","Sach")">Delete</button> 
+                <button type="button" onclick="location.href='@Url.Action("Index", "Sach")'">
+                    Back to List
+                </button>
+            </div>
+        }
+        <div>
+
+        </div><br />
+        <h3>Bạn có chắc chắn muốn xóa sách này không?</h3>
+
+    </div>
+</center>
