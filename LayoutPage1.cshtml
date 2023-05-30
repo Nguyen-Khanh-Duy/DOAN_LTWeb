@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Nhà Sách</title>
+    <link href="~/Views/Shared/StyleSheet1.css" rel="stylesheet" />
+</head>
+<body style="background-image:">
+    <style>
+        #wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            
+        }
+
+        #header {
+            background: #bebebe;
+            text-align: center;
+            padding: 5px;
+        }
+
+        #footer {
+            background: #b9ae72;
+            padding: 15px;
+        }
+
+        #wp-content {
+            display: flex;
+            min-height: 600px;
+          
+        }
+
+        #content {
+            flex-basis: 17% ;
+            background: #bebebe;
+            padding: 10px 15px;
+        }
+
+        #sidebar {
+            flex-basis: 83%;
+        }
+
+        .menu {
+            padding-left: 0px;
+            list-style: none;
+            font-size: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 20px;
+           
+            color: black;
+        }
+        input {
+            width: 200px;
+            height: 40px;
+            margin-botton: 10px;
+            border-radius: 5px;
+            border: 1px solid grey;
+            padding-left: 20px;
+        }
+        button {
+            width: 200px;
+            height: 40px;
+            margin-botton: 10px;
+            border-radius: 5px;
+            border: 1px solid grey;
+            padding-left: 20px;
+        }
+        button:hover{
+        font-size:15px;
+
+        }
+        input:hover {
+            font-size: 15px;
+        }
+
+
+
+        ul.menu a {
+            font-size: 18px;
+            color: #111;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            border: 1px solid #c54b4b;
+            display: inline-block;
+            color: black;
+            font-weight: 600;
+            box-shadow: 4px 4px black;
+            background-color: rgb(222, 230, 222);
+            border-radius: 5px;
+        }
+        h1 {
+           
+            
+            padding: 10px 20px;
+            text-transform: uppercase;
+            border: 5px solid #c54b4b;
+            display: inline-block;
+            color: black;
+            
+            box-shadow: 8px 8px black;
+        }
+        h2 {
+            font-size: 18px;
+            color: #111;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            border: 3px solid #809845;
+            display: inline-block;
+            color: black;
+            font-weight: 600;
+            border-radius: 5px;
+        }
+       
+    </style>
+
+    <div id="wrapper">
+        <div id="header">
+            <h1>BOOKSTORE</h1>
+        </div>
+        <div id="wp-content">
+            <div id="content">
+                <h2>Menu</h2>
+                <ul class="menu">
+
+                    <li><a href="https://localhost:44393/SACH/Index">Sách</a></li>
+                    <br />
+                    <li><a href="https://localhost:44393/DAILY/Index">Đại Lý</a></li>
+                    <br />
+                    <li><a href="https://localhost:44393/HOADON/Index">Hóa Đơn</a></li>
+                    <br />
+                    <li><a href="https://localhost:44393/NHAXUATBAN/Index">Nhà Xuất Bản</a></li>
+                    <br />
+
+                    <li><a href="https://localhost:44393/CHITIETHOADON/Index">Chi Tiết Hóa Đơn</a></li>
+                    <br />
+                </ul>
+            </div>
+            <div id="sidebar">
+                <div>
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <center><span>NhaSach@gmail.com.vn</span></center>
+        </div>
+    </div>
+</body>
+</html>
+
+
